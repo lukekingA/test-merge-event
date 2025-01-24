@@ -1,0 +1,14 @@
+name: Handle PR Closure
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  job1:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: merged
+        run: |
+         echo "Merged"
